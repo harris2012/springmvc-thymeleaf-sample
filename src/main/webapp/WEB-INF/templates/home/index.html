@@ -17,6 +17,16 @@
     <div th:replace="home/methods::sayhi('tom')"></div>
     <div th:replace="home/methods::sayhi('jack')"></div>
 
+    <div class="bordered">
+        <p>use Component</p>
+        <p th:text="${@basicConfig.getAppId()}"></p>
+    </div>
+
+    <div class="bordered">
+        <p>use context</p>
+        <p th:text="${springRequestContext.getContextPath()}"></p>
+    </div>
+
 </section>
 
 </body>
