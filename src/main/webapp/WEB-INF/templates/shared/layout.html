@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Shared Layout</title>
+    <link href="./styles/style.css" rel="stylesheet" />
+</head>
+<body>
+
+<p>this is shared layout</p>
+
+<div th:replace="shared/menu"></div>
+
+<div layout:fragment="content"></div>
+
+</body>
+</html>
