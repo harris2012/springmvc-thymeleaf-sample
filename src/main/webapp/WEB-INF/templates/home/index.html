@@ -10,21 +10,50 @@
 <section layout:fragment="content" class="bordered">
     <p>this is home/index</p>
 
-    <p th:text="${name}"></p>
+    <div class="example">
+        <p class="title">th:text</p>
+        <p th:text="${name}"></p>
+    </div>
 
-    <div th:replace="home/first"></div>
+    <div class="example">
+        <p class="title">th:replace</p>
+        <div th:replace="home/first"></div>
+        <div th:replace="home/methods::sayhi('tom')"></div>
+        <div th:replace="home/methods::sayhi('jack')"></div>
+    </div>
 
-    <div th:replace="home/methods::sayhi('tom')"></div>
-    <div th:replace="home/methods::sayhi('jack')"></div>
-
-    <div class="bordered">
-        <p>use Component</p>
+    <div class="example">
+        <p class="title">use @Component</p>
         <p th:text="${@basicConfig.getAppId()}"></p>
     </div>
 
-    <div class="bordered">
-        <p>use context</p>
+    <div class="example">
+        <p class="title">spring context</p>
         <p th:text="${springRequestContext.getContextPath()}"></p>
+    </div>
+
+    <div class="example">
+        <p class="title">th:attr</p>
+        <p th:attr="data-appid=${@basicConfig.getAppId()}">zhangsan</p>
+    </div>
+
+    <div class="example">
+        <p class="title">th:if</p>
+        <p th:if="${1==1}">ture</p>
+        <p th:if="${1==0}">false</p>
+    </div>
+
+    <div class="example">
+        <p class="title">th:classappend</p>
+        <p class="zz" th:classappend="good">zhangsan</p>
+        <p class="zz" th:classappend="${1==1?'good':'bad'}">zhangsan</p>
+    </div>
+
+    <div class="example">
+        <p class="title">th:each</p>
+        <ul>
+            <li th:each="item:${@basicConfig.getNames()}" th:text="${item}"></li>
+        </ul>
     </div>
 
 </section>

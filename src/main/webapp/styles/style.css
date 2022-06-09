@@ -3,3 +3,26 @@
     margin: 5px;
     padding: 5px;
 }
+
+.example {
+    border: 1px solid rgb(17, 97, 245);
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+}
+
+.example:hover{
+    background-color: aliceblue;
+}
+
+.example::after{
+    content: 'example';
+    position: absolute;
+    color: #ccc;
+    top:0;
+    right: 0;
+}
+
+.title{
+    font-weight: bold;
+}
